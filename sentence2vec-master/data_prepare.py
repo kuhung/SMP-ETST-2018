@@ -24,7 +24,7 @@ stopwords_path = '../input/stop_words.txt'
 
 def jiebaclearText(text):
     mywordlist = []
-    seg_list = jieba.cut(text, cut_all=False)
+    seg_list = jieba.cut(text.lower(), cut_all=False)
     liststr="/ ".join(seg_list)
     f_stop = open(stopwords_path)
     try:

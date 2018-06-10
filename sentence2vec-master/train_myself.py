@@ -21,8 +21,7 @@ tok_titles = [word_tokenize(str(title)) for title in titles]
 
 # refer to here for all parameters:
 # https://radimrehurek.com/gensim/models/word2vec.html
-model = Word2Vec(tok_titles, sg=1, size=200, window=5, min_count=5, workers=4,
-                 iter=100)
+model = Word2Vec(tok_titles, sg=1, size=100, window=5, min_count=5, workers=3,max_vocab_size=8000,iter=20)
 
 # save model to file
-model.save('../feature/content_200.model')
+model.save('../feature/content_100.model')

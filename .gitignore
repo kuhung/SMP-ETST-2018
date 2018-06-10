@@ -8,3 +8,6 @@ __pycache__
 .ipynb_checkpoints
 
 .ipynb_checkpoints/*
+
+.vscode/*
+sentence2vec-master/.vscode/settings.json
