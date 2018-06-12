@@ -3,6 +3,19 @@ Sentence2Vec
 
 This repository shows how to use Word2Vec to build a Sentence2Vec model.
 
+## Requirement
+```
+python = 3.6
+pandas 
+tqdm 
+nltk 
+gensim
+sklearn 
+matplotlib 
+stopwords 
+jieba
+jupyter 
+```
 ## How it works
 
 Word2Vec can help to find other words with similar semantic meaning. However, Word2Vec can only take 1 word each time, while a sentence consists of multiple words. To solve this, I write the Sentence2Vec, which is actually a wrapper to Word2Vec. To obtain the vector of a sentence, I simply get the averaged vector sum of each word in the sentence. The similarity score of two sentences can be calculated by the cosine similarity of their result vectors.
@@ -14,6 +27,7 @@ Here, I have used job titles as sentences for example data.
 
 ## Getting Started
 
+<!--
 ```sh
 # install pipenv if you don't have it
 pip install pipenv
@@ -62,7 +76,7 @@ pipenv run python test.py
 #                        'Cafe all rounder and Sandwich Hand'))
 # 0.8558831986704775
 ```
-
+-->
 ## API
 
 #### constructor(model_file)

@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 from lib.sentence2vec import Sentence2Vec
@@ -11,14 +10,16 @@ model = Sentence2Vec('../feature/content_100.model')
 sen2vec = pd.DataFrame(data['content'].apply(lambda x:model.get_vector(str(x))).tolist())
 
 data = pd.concat([data,sen2vec],axis=1)
-#data.to_csv('../feature/data_vec.csv',index=False)
-#data = pd.read_csv('../feature/data_vec.csv')
+data.drop(['content'],axis=1,inplace=True)
+
+data.to_csv('../feature/data_vec.csv',index=False)
+data = pd.read_csv('../feature/data_vec.csv')
 
 train = data.loc[data['source']=='train']
 test = data.loc[data['source']=='test']
 
-train.drop(['source','content'],axis=1,inplace=True)
-test.drop(['source','content'],axis=1,inplace=True)
+train.drop(['source'],axis=1,inplace=True)
+test.drop(['source'],axis=1,inplace=True)
 
 
 X = train.drop(['id'],axis=1)
@@ -37,6 +38,6 @@ print(sub.head())
 
 sub = pd.DataFrame({'0':test['id'],'1':result})
 sub.columns=['test_id','result']
-sub.replace({'mhY5opF':'?mhY5opF4'},inplace=True) # TODO: test effe
+sub.replace({'﻿mhY5opF':'?mhY5opF4'},inplace=True) 
 
-sub.to_csv('../output/sen2vec_100replace.csv',index=False)
+sub.to_csv('../output/sen2vec_100knn.csv',index=False)
