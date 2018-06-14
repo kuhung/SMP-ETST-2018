@@ -18,6 +18,7 @@ data = pd.concat([train,test])
 data['content'] = data['id'].apply(lambda x : x[9:])
 data['id'] = data['id'].apply(lambda x : x[:8])
 data['content'] = data['content'].map(str)
+data.replace({'﻿mhY5opF':'?mhY5opF4'},inplace=True) 
 
 
 stopwords_path = '../input/stop_words.txt' 

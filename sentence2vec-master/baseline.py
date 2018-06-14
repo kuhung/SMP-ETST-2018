@@ -38,6 +38,6 @@ print(sub.head())
 
 sub = pd.DataFrame({'0':test['id'],'1':result})
 sub.columns=['test_id','result']
-sub.replace({'﻿mhY5opF':'?mhY5opF4'},inplace=True) 
+#sub.replace({'﻿mhY5opF':'?mhY5opF4'},inplace=True) 
 
 sub.to_csv('../output/sen2vec_100knn.csv',index=False)

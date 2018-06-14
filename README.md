@@ -1,7 +1,7 @@
 # SMP-ETST-2018
 
 ## 文本溯源方案
-### 模型选择
+### 模型选择/特征表达
 - [x] simhash
     - 用于大型文本对比，在小文本上较为敏感。在本问题上表现不佳。
 
@@ -10,13 +10,18 @@
     - [x] 需要对文本数据的进一步预处理。
 
 - [ ] innoplexus
+    - [x] top_1 词频法有效
+        - [ ] 优化匹配计算速度
 
 - [ ] [fasttext](https://github.com/facebookresearch/fastText)
-    - 更快的文本处理方法。 
+    - 更快的文本处理方法。
+
 - [ ] char2vec 
     - 看重他的细粒度。
+
 - [ ] zhihu [Top 1、](https://github.com/chenyuntc/PyTorchText)[Top 2](https://github.com/Magic-Bubble/Zhihu) 
 
+- [ ] 句子长度
 
 ### 数据处理
 - [x] 文本读取不完整
@@ -34,7 +39,7 @@
     - 计算点之前的距离、按阈值选取。
     - 在本例中，一对多是不存在的。由于评价指标单一，未说明是对单行的 F1 累加求得。且由评价指标反馈得到，recall 已经够高，目前是精度不够，引入过多不存在的源文。
         - [ ] 通过模型的差异化，组合多个模型。投票得出确定项。 
-            - [ ] xgboost、lightgbm label 编码
+            - [ ] xgboost、lightgbm label 编码。
 
 - [x] KNN 模型阈值设置
     - [x] 根据反推 TP 和 P 的数量。（会过拟合）
@@ -42,3 +47,7 @@
     - [x] KNN 预测概览均为一，阈值设置无效
 - [x] KNN 阈值替代方案：计算两个句子向量的距离
 
+- [ ] nn 方案
+
+- [ ] 长短句匹配
+    - 句子的长短也是一个重要特征，但 vec 化之后该特征无法得到表达。  
