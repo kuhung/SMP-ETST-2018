@@ -37,6 +37,7 @@ def find_relation(inp_df):
     test = inp_df.loc[data['source']=='test'].reset_index()
     
     for i in range(len(test)):
+        print(i)
         for j in range(len(train)):
             rel_df = dict()
             try:
