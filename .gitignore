@@ -11,3 +11,5 @@ __pycache__
 
 .vscode/*
 sentence2vec-master/.vscode/settings.json
+
+._*

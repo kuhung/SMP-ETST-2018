@@ -1,6 +1,6 @@
 from lib.sentence2vec import Sentence2Vec
 
-model = Sentence2Vec('../feature/content_100.model')
+model = Sentence2Vec('../feature/content_small.model')
 
 # turn job title to vector
 print(model.get_vector(' FT IR 产物 结构 进行 分析 扫描电镜 查看 喷洒 抑尘剂 煤粉 固化 表面 形貌'))

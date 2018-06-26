@@ -5,7 +5,7 @@ import pandas as pd
 
 
 data = pd.read_csv('../feature/data_cutted.csv')
-model = Sentence2Vec('../feature/content_100.model')
+model = Sentence2Vec('../feature/content_small.model')
 
 sen2vec = pd.DataFrame(data['content'].apply(lambda x:model.get_vector(str(x))).tolist())
 
@@ -34,10 +34,10 @@ feature = test.drop(['id'],axis=1)
 result = neigh.predict(feature)
 
 sub = pd.read_csv('../input/smp_sample.csv')
-print(sub.head())
 
 sub = pd.DataFrame({'0':test['id'],'1':result})
 sub.columns=['test_id','result']
 #sub.replace({'﻿mhY5opF':'?mhY5opF4'},inplace=True) 
+print(sub.head())
 
-sub.to_csv('../output/sen2vec_100knn.csv',index=False)
+sub.to_csv('../output/sen2vec_300small_knn.csv',index=False)
