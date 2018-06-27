@@ -19,7 +19,7 @@ data['content'] = data['id'].apply(lambda x : x[9:])
 data['id'] = data['id'].apply(lambda x : x[:8])
 data['content'] = data['content'].map(str)
 data.replace({'﻿mhY5opF':'?mhY5opF4'},inplace=True) 
-
+data['length'] = data['content'].apply(lambda x:len(str(x)))
 
 stopwords_path = '../input/stop_words.txt' 
 
@@ -30,7 +30,7 @@ def jiebaclearText(text):
     f_stop = open(stopwords_path)
     try:
         f_stop_text = f_stop.read( )
-        #f_stop_text=unicode(f_stop_text,'utf-8')
+        #f_stop_text=str(f_stop_text,'utf-8')
     finally:
         f_stop.close( )
     f_stop_seg_list=f_stop_text.split('\n')
