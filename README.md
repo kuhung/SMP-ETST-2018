@@ -29,7 +29,11 @@
 
 - [ ] zhihu [Top 1、](https://github.com/chenyuntc/PyTorchText)[Top 2](https://github.com/Magic-Bubble/Zhihu) 
 
-- [ ] 句子长度
+- [x] 句子长度
+
+- [ ] 队友代码调整
+    - [ ] 特征提取方法扩增
+    - [ ] 概率保留
 
 ### 数据处理
 - [x] 文本读取不完整
